@@ -6,7 +6,7 @@ export default async function handler(req, res) {
   const { name, message } = req.body;
 
   const TOKEN = "ТВОЙ_BOT_TOKEN";
-  const CHAT_ID = -5193118026;
+  const CHAT_ID = -1003685684048;
 
   const text = `Новое сообщение от ${name}:\n${message}`;
 
