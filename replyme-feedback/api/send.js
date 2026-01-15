@@ -5,8 +5,8 @@ export default async function handler(req, res) {
 
   const { name, message } = req.body;
 
-  const TOKEN = "ТВОЙ_BOT_TOKEN";
-  const CHAT_ID = -1003685684048;
+  const TOKEN = "8511117986:AAFitll_p37ZdWZ5efwMbzSBel2PuFjpghc"; // новый токен
+  const CHAT_ID = -1003685684048; // chat_id группы
 
   const text = `Новое сообщение от ${name}:\n${message}`;
 
@@ -14,10 +14,7 @@ export default async function handler(req, res) {
     await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        chat_id: CHAT_ID,
-        text: text
-      })
+      body: JSON.stringify({ chat_id: CHAT_ID, text })
     });
 
     return res.status(200).json({ success: true });
@@ -26,4 +23,5 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: "Telegram error" });
   }
 }
+
 
